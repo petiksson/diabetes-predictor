@@ -193,6 +193,59 @@
             font-size: .75rem;
             color: var(--gray-500);
         }
+
+        /* ---- tooltips ---- */
+        .help-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            color: var(--gray-900);
+            font-size: .65rem;
+            font-weight: 700;
+            margin-left: .35rem;
+            cursor: help;
+            position: relative;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .help-icon .tooltip {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2a2a2a;
+            color: var(--gray-900);
+            font-size: .78rem;
+            font-weight: 400;
+            padding: .5rem .75rem;
+            border-radius: .5rem;
+            width: 220px;
+            line-height: 1.45;
+            box-shadow: 0 4px 16px rgba(0,0,0,.5);
+            border: 1px solid var(--gray-300);
+            z-index: 10;
+            text-align: left;
+        }
+
+        .help-icon .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #2a2a2a;
+        }
+
+        .help-icon:hover .tooltip {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -206,43 +259,43 @@
         <form id="predictionForm" novalidate>
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="glucose">Glucose <span class="unit">(mg/dL)</span></label>
+                    <label for="glucose">Glucose <span class="unit">(mg/dL)</span><span class="help-icon">?<span class="tooltip">Blood sugar level measured after fasting. Normal is below 100; 126+ may indicate diabetes.</span></span></label>
                     <input type="number" id="glucose" step="any" min="0" max="500" placeholder="e.g. 120" required>
                     <div class="error-msg" id="glucose-err"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="blood_pressure">Blood Pressure <span class="unit">(mm Hg)</span></label>
+                    <label for="blood_pressure">Blood Pressure <span class="unit">(mm Hg)</span><span class="help-icon">?<span class="tooltip">Diastolic blood pressure (the lower number). Normal is around 80 mm Hg.</span></span></label>
                     <input type="number" id="blood_pressure" step="any" min="0" max="300" placeholder="e.g. 72" required>
                     <div class="error-msg" id="blood_pressure-err"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="skinfold">Skinfold Thickness <span class="unit">(mm)</span></label>
+                    <label for="skinfold">Skinfold Thickness <span class="unit">(mm)</span><span class="help-icon">?<span class="tooltip">Triceps skinfold thickness measured in mm. Estimates body fat; typical range is 10–50 mm.</span></span></label>
                     <input type="number" id="skinfold" step="any" min="0" max="200" placeholder="e.g. 29" required>
                     <div class="error-msg" id="skinfold-err"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="insulin">Insulin <span class="unit">(&mu;U/mL)</span></label>
+                    <label for="insulin">Insulin <span class="unit">(&mu;U/mL)</span><span class="help-icon">?<span class="tooltip">2-hour serum insulin level. Normal fasting range is 16–166 &mu;U/mL.</span></span></label>
                     <input type="number" id="insulin" step="any" min="0" max="1000" placeholder="e.g. 85" required>
                     <div class="error-msg" id="insulin-err"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bmi">BMI <span class="unit">(kg/m&sup2;)</span></label>
+                    <label for="bmi">BMI <span class="unit">(kg/m&sup2;)</span><span class="help-icon">?<span class="tooltip">Body Mass Index = weight(kg) / height(m)&sup2;. Normal: 18.5–24.9; overweight: 25–29.9; obese: 30+.</span></span></label>
                     <input type="number" id="bmi" step="any" min="0" max="100" placeholder="e.g. 28.5" required>
                     <div class="error-msg" id="bmi-err"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="diabetes_pedigree">Diabetes Pedigree</label>
+                    <label for="diabetes_pedigree">Diabetes Pedigree<span class="help-icon">?<span class="tooltip">A function scoring the likelihood of diabetes based on family history. Typical range: 0.08–2.42.</span></span></label>
                     <input type="number" id="diabetes_pedigree" step="any" min="0" max="3" placeholder="e.g. 0.627" required>
                     <div class="error-msg" id="diabetes_pedigree-err"></div>
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="age">Age <span class="unit">(years)</span></label>
+                    <label for="age">Age <span class="unit">(years)</span><span class="help-icon">?<span class="tooltip">Your age in years. Diabetes risk generally increases with age.</span></span></label>
                     <input type="number" id="age" step="1" min="15" max="120" placeholder="e.g. 35" required>
                     <div class="error-msg" id="age-err"></div>
                 </div>
