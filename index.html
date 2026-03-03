@@ -195,6 +195,13 @@
             color: var(--gray-500);
         }
 
+        .credit {
+            text-align: center;
+            margin-top: .5rem;
+            font-size: .7rem;
+            color: var(--gray-500);
+        }
+
         /* ---- tooltips ---- */
         .help-icon {
             display: inline-flex;
@@ -375,6 +382,7 @@
     </div>
 
     <footer id="pageFooter">Data Mining &mdash; Decision Tree Prediction App &mdash; BigML Model</footer>
+    <div class="credit">&copy; Petr Hor&aacute;k &mdash; V&Scaron;E (Prague University of Economics and Business)</div>
 </div>
 
 <script>
@@ -1054,25 +1062,25 @@ var i18n = {
         negativeDesc: 'Based on the values you provided, the model indicates a <strong>lower probability</strong> of diabetes. Continue maintaining a healthy lifestyle! Regular check-ups are still recommended.'
     },
     cs: {
-        title: '\u262C\uFE0F Prediktor rizika diabetu',
-        subtitle: 'Zadejte sv\u00E9 zdravotn\u00ED ukazatele n\u00ED\u017Ee pro predikci rizika diabetu.',
+        title: '\u262C\uFE0F Prediktor rizika cukrovky',
+        subtitle: 'Zadejte sv\u00E9 zdravotn\u00ED ukazatele a zjist\u011Bte predikci rizika cukrovky.',
         labels: {
-            glucose: 'Gluk\u00F3za <span class="unit">(mg/dL)</span>',
+            glucose: 'Glyk\u00E9mie <span class="unit">(mg/dL)</span>',
             blood_pressure: 'Krevn\u00ED tlak <span class="unit">(mm Hg)</span>',
             skinfold: 'Tlou\u0161\u0165ka ko\u017En\u00ED \u0159asy <span class="unit">(mm)</span>',
             insulin: 'Inzul\u00EDn <span class="unit">(\u00B5U/mL)</span>',
             bmi: 'BMI <span class="unit">(kg/m\u00B2)</span>',
-            diabetes_pedigree: 'Diabetick\u00FD pedigree',
+            diabetes_pedigree: 'Rodinn\u00E1 z\u00E1t\u011B\u017E',
             age: 'V\u011Bk <span class="unit">(roky)</span>'
         },
         tooltips: {
-            glucose: 'Hladina cukru v krvi m\u011B\u0159en\u00E1 nala\u010Dno. Norm\u00E1ln\u00ED je pod 100; 126+ m\u016F\u017Ee zna\u010Dit diabetes.',
-            blood_pressure: 'Diastolick\u00FD krevn\u00ED tlak (spodn\u00ED \u010D\u00EDslo). Norm\u00E1ln\u00ED je kolem 80 mm Hg.',
-            skinfold: 'Tlou\u0161\u0165ka ko\u017En\u00ED \u0159asy na tricepsu v mm. Odhaduje t\u011Blesn\u00FD tuk; typick\u00FD rozsah je 10\u201350 mm.',
-            insulin: 'Dvouhodinov\u00E1 hladina inzul\u00EDnu v s\u00E9ru. Norm\u00E1ln\u00ED rozsah nala\u010Dno je 16\u2013166 \u00B5U/mL.',
-            bmi: 'Index t\u011Blesn\u00E9 hmotnosti = v\u00E1ha(kg) / v\u00FD\u0161ka(m)\u00B2. Norm\u00E1ln\u00ED: 18,5\u201324,9; nadv\u00E1ha: 25\u201329,9; obezita: 30+.',
-            diabetes_pedigree: 'Funkce hodnot\u00EDc\u00ED pravd\u011Bpodobnost diabetu na z\u00E1klad\u011B rodinn\u00E9 anamn\u00E9zy. Typick\u00FD rozsah: 0,08\u20132,42.',
-            age: 'V\u00E1\u0161 v\u011Bk v letech. Riziko diabetu obecn\u011B roste s v\u011Bkem.'
+            glucose: 'Hladina cukru v krvi m\u011B\u0159en\u00E1 nala\u010Dno. Norm\u00E1l je pod 100; hodnota 126+ m\u016F\u017Ee sv\u011Bd\u010Dit o cukrovce.',
+            blood_pressure: 'Diastolick\u00FD tlak (spodn\u00ED hodnota). Norm\u00E1l je kolem 80 mm Hg.',
+            skinfold: 'Tlou\u0161\u0165ka ko\u017En\u00ED \u0159asy na tricepsu v mm. Slou\u017E\u00ED k odhadu t\u011Blesn\u00E9ho tuku; b\u011B\u017En\u00FD rozsah je 10\u201350 mm.',
+            insulin: 'Hladina inzul\u00EDnu v s\u00E9ru po 2 hodin\u00E1ch. B\u011B\u017En\u00FD rozsah nala\u010Dno je 16\u2013166 \u00B5U/mL.',
+            bmi: 'Index t\u011Blesn\u00E9 hmotnosti = hmotnost(kg) / v\u00FD\u0161ka(m)\u00B2. Norma: 18,5\u201324,9; nadv\u00E1ha: 25\u201329,9; obezita: 30+.',
+            diabetes_pedigree: 'Sk\u00F3re vyhodnocuj\u00EDc\u00ED pravd\u011Bpodobnost cukrovky na z\u00E1klad\u011B rodinn\u00E9 anamn\u00E9zy. Typick\u00FD rozsah: 0,08\u20132,42.',
+            age: 'V\u00E1\u0161 v\u011Bk v letech. Riziko cukrovky obecn\u011B roste s v\u011Bkem.'
         },
         placeholders: {
             glucose: 'nap\u0159. 120',
@@ -1084,24 +1092,24 @@ var i18n = {
             age: 'nap\u0159. 35'
         },
         fieldNames: {
-            glucose: 'Gluk\u00F3za',
+            glucose: 'Glyk\u00E9mie',
             blood_pressure: 'Krevn\u00ED tlak',
             skinfold: 'Tlou\u0161\u0165ka ko\u017En\u00ED \u0159asy',
             insulin: 'Inzul\u00EDn',
             bmi: 'BMI',
-            diabetes_pedigree: 'Diabetick\u00FD pedigree',
+            diabetes_pedigree: 'Rodinn\u00E1 z\u00E1t\u011B\u017E',
             age: 'V\u011Bk'
         },
-        predict: 'Predikovat',
-        disclaimer: '\u26A0 <strong>Upozorn\u011Bn\u00ED:</strong> Tento n\u00E1stroj je pouze pro vzd\u011Bl\u00E1vac\u00ED \u00FA\u010Dely a NEN\u00CD l\u00E9ka\u0159skou diagn\u00F3zou. V\u017Edy se pora\u010Fte s kvalifikovan\u00FDm l\u00E9ka\u0159em.',
-        footer: 'Data Mining \u2014 Aplikace predikce rozhodovac\u00EDm stromem \u2014 BigML Model',
-        required: ' je povinn\u00E9.',
+        predict: 'Vyhodnotit',
+        disclaimer: '\u26A0 <strong>Upozorn\u011Bn\u00ED:</strong> Tento n\u00E1stroj slou\u017E\u00ED pouze pro vzd\u011Bl\u00E1vac\u00ED \u00FA\u010Dely a NENAHRAZUJE l\u00E9ka\u0159skou diagn\u00F3zu. V\u017Edy se pora\u010Fte se sv\u00FDm l\u00E9ka\u0159em.',
+        footer: 'Data Mining \u2014 Predik\u010Dn\u00ED aplikace s rozhodovac\u00EDm stromem \u2014 BigML Model',
+        required: ' je povinn\u00E9 pole.',
         invalidNumber: 'Zadejte platn\u00E9 \u010D\u00EDslo.',
-        rangeError: function(min, max) { return 'Mus\u00ED b\u00FDt mezi ' + min + ' a ' + max + '.'; },
-        positiveTitle: 'Zji\u0161t\u011Bno vy\u0161\u0161\u00ED riziko diabetu',
-        positiveDesc: 'Na z\u00E1klad\u011B zadan\u00FDch hodnot model ukazuje <strong>vy\u0161\u0161\u00ED pravd\u011Bpodobnost</strong> diabetu. Pora\u010Fte se pros\u00EDm s l\u00E9ka\u0159em pro spr\u00E1vnou diagn\u00F3zu.',
-        negativeTitle: 'Ni\u017E\u0161\u00ED riziko diabetu',
-        negativeDesc: 'Na z\u00E1klad\u011B zadan\u00FDch hodnot model ukazuje <strong>ni\u017E\u0161\u00ED pravd\u011Bpodobnost</strong> diabetu. Pokra\u010Dujte ve zdrav\u00E9m \u017Eivotn\u00EDm stylu! Pravideln\u00E9 prohl\u00EDdky jsou st\u00E1le doporu\u010Deny.'
+        rangeError: function(min, max) { return 'Hodnota mus\u00ED b\u00FDt mezi ' + min + ' a ' + max + '.'; },
+        positiveTitle: 'Zji\u0161t\u011Bno vy\u0161\u0161\u00ED riziko cukrovky',
+        positiveDesc: 'Na z\u00E1klad\u011B zadan\u00FDch hodnot model ukazuje na <strong>vy\u0161\u0161\u00ED pravd\u011Bpodobnost</strong> cukrovky. Doporu\u010Dujeme nav\u0161t\u00EDvit l\u00E9ka\u0159e pro odbornou diagn\u00F3zu.',
+        negativeTitle: 'Ni\u017E\u0161\u00ED riziko cukrovky',
+        negativeDesc: 'Na z\u00E1klad\u011B zadan\u00FDch hodnot model ukazuje na <strong>ni\u017E\u0161\u00ED pravd\u011Bpodobnost</strong> cukrovky. Pokra\u010Dujte ve zdrav\u00E9m \u017Eivotn\u00EDm stylu! Pravideln\u00E9 preventivn\u00ED prohl\u00EDdky jsou st\u00E1le doporu\u010Deny.'
     }
 };
 
